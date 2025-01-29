@@ -37,7 +37,7 @@ def internal_error(error):
 
 @app.route("/")
 def index() -> str:
-    return render_template("dashboard.html")
+    return render_template("templates/dashboard.html")
 
 
 @app.route("/api/temperature_over_time", methods=["GET"])
