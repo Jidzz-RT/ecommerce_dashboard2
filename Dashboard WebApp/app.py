@@ -3,9 +3,7 @@ import sqlite3
 import pathlib
 import logging
 import requests  # Importing the requests library
-import os
-print("Current working directory:", os.getcwd())
-print("Template folder path:", os.path.join(os.getcwd(), 'templates'))
+
 # Setup logging
 logging.basicConfig(filename="app.log", level=logging.DEBUG)
 
@@ -39,8 +37,8 @@ def internal_error(error):
 
 @app.route("/")
 def index() -> str:
-    return render_template("Shell\Documents\DT402-flask-main\templates")
-app = Flask(__name__, template_folder='Shell\Documents\DT402-flask-main\templates')
+    return render_template("dashboard.html")
+
 
 @app.route("/api/temperature_over_time", methods=["GET"])
 def temperature_over_time():
