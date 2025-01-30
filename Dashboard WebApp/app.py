@@ -2,7 +2,10 @@ from flask import Flask, jsonify, render_template, Response, abort, make_respons
 import sqlite3
 import pathlib
 import logging
-import requests  # Importing the requests library
+import requests # Importing the requests library
+import certifi
+
+response = requests.get('https://archive-api.open-meteo.com/v1/archive', verify=certifi.where())
 
 # Setup logging
 logging.basicConfig(filename="app.log", level=logging.DEBUG)
@@ -52,7 +55,7 @@ FROM orders;
         start_date, end_date = result[0]
 
         # Making an API call to fetch temperature data
-        API_ENDPOINT = "https://archive-api.open-meteo.com/v1/archive"
+        API_ENDPOINT = ("https://archive-api.open-meteo.com/v1/archive")
         params = {
             "latitude": 50.6053,  # London UK
             "longitude": -3.5952,
