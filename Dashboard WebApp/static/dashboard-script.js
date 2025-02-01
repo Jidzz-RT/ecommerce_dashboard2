@@ -84,7 +84,7 @@ fetchDataAndRenderChart(
 
 // Revenue Generation Chart
 fetchDataAndRenderChart("/api/revenue_generation", "revenueChart", (data) => ({
-  type: "line",
+  type: "polarArea",
   data: {
     labels: data.dates,
     datasets: [
@@ -122,7 +122,7 @@ fetchDataAndRenderChart(
   "/api/payment_method_popularity",
   "paymentMethodChart",
   (data) => ({
-    type: "pie",
+    type: "doughnut",
     data: {
       labels: data.methods,
       datasets: [
