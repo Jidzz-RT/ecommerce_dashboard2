@@ -3,9 +3,6 @@ import sqlite3
 import pathlib
 import logging
 import requests # Importing the requests library
-import certifi
-
-response = requests.get('https://archive-api.open-meteo.com/v1/archive', verify=certifi.where())
 
 # Setup logging
 logging.basicConfig(filename="app.log", level=logging.DEBUG)
@@ -64,8 +61,8 @@ FROM orders;
             "daily": "temperature_2m_max",
             "timezone": "GMT",
         }
-        response = requests.get(API_ENDPOINT, params=params)
-        response.raise_for_status()
+        response = requests.get(API_ENDPOINT, params=params, verify=False)
+        print(response.json())
 
         return jsonify(response.json())
     except Exception as e:

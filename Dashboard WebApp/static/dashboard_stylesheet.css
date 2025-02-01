@@ -3,13 +3,14 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color:lightgray;
+  color: whitesmoke
 }
 
 .container {
   width: 100%;
   padding: 0;
-  background-color: #fff;
+  background-color:lightgray;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -19,8 +20,8 @@ body {
   font-size: 24px;
   margin-bottom: 20px;
   padding: 20px 0;
-  background-color: #333;
-  color: #fff;
+  background-color: darkgray;
+  color:whitesmoke;
 }
 
 /* Chart containers for responsive layout */
@@ -68,6 +69,6 @@ body {
   text-align: center;
   margin-top: 40px;
   padding: 20px 0;
-  background-color: #333;
-  color: #fff;
+  background-color: darkgray;
+  color: whitesmoke;
 }
